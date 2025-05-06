@@ -1,8 +1,8 @@
 """
-FMO Consistency Checker
+Ontology Consistency Checker
 
 Checks the consistency of the upper-ontology classifications of all classes in
-the FMO ontology.
+the OMRSE or FMO ontology. 
 
 """
 
@@ -43,14 +43,18 @@ def get_label(entity):
   for label in g.objects(entity, RDFS.label):
       return str(label)
 
+#Choose ontology
 
-# Load RDF file of FMO ontology
+ontology = 'OMRSE' # 'OMRSE' or 'FMO'
+
+
+# Load RDF file of ontology
 g = Graph()
-g.parse("/rdfs/FMO.rdf", format="xml")
+g.parse(f"/rdfs/{ontology}.rdf", format="xml")
 
 
 # Load classifications for the FMO ontology
-scrf_df = pd.read_csv('/classifications/FMO_SCRF.csv')
+scrf_df = pd.read_csv(f'/classifications/{ontology}_SCRF.csv')
 
 
 # Collect all declared classes
