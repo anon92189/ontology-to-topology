@@ -109,8 +109,10 @@ def compute_all_min_path_lengths_with_unreachable(graph:nx.Graph) -> dict:
               min_path_lengths[u][v] = float('inf')
   return min_path_lengths
 
+#Load the combined ontology rdf as a graph object.
+graph = load_graph_from_rdf("/rdsf/combined_ontology.rdf")
 
-graph = load_graph_from_rdf("combined_ontology.rdf")
+#Compute the shortest path between all nodes in the graph.
 shortest_paths = compute_all_min_path_lengths_with_unreachable(graph)
 
 #Build a dictionary containing the custom embedding for each node in the graph.
