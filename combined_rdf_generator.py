@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Combined Ontology Generator
+Combined RDF Generator
 
 Creates a single RDF for all subClassOf relations defined within the OMRSE, FMO, and SHAS ontologies, 
 with the SCRF ontology of agents, artifacts, and precepts layered on top of it to create a unified 
