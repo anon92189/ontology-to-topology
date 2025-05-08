@@ -6,6 +6,9 @@ with the SCRF ontology of agents, artifacts, and precepts layered on top of it t
 ontology of sociotechnical concepts.
 """
 
+#Import rdflib
+!pip install rdflib
+
 #Import Packages
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL
